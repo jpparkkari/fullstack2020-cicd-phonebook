@@ -21,9 +21,9 @@ jobs:
         working-directory: './puhelinluettelo'
         run: npm install
       - name: lint frontend
+        working-directory: './puhelinluettelo'
         run: npm run eslint
       - name: run build
-        working-directory: '..'
         run: npm run build:ui
       #e2e maybe here
       #deploy
