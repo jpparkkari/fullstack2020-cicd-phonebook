@@ -35,6 +35,7 @@
   "devDependencies": {
     "cypress": "^6.6.0",
     "eslint": "^7.21.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-react": "^7.22.0"
   }
 }
