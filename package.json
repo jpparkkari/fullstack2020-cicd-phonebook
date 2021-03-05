@@ -11,7 +11,7 @@
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
     "logs:prod": "heroku logs --tail",
-    "eslint": "eslint './**/*.js'"
+    "eslint": "eslint './*.js'"
   },
   "author": "J-P Parkkari",
   "license": "MIT",
