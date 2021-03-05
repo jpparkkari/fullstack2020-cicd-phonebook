@@ -30,7 +30,7 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           command: npm --prefix ./puhelinluettelo run test:e2e
-          start: npm start:test
+          start: npm run start:test
           wait-on: http://localhost:3001
       #deploy
       - name: Bump version and push tag
