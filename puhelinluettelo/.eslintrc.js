@@ -20,7 +20,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: [
-    'react',
+    'react', "cypress"
   ],
   rules: {
     'react/prop-types': 'off'

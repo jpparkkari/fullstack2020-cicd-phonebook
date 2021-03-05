@@ -26,6 +26,12 @@ jobs:
       - name: run build
         run: npm run build:ui
       #e2e maybe here
+      - name: e2e
+        uses: cypress-io/github-action@v2
+        with:
+          command: npm --prefix ./puhelinluettelo run test:e2e
+          start: npm start:test
+          wait-on: http://localhost:3001
       #deploy
       - name: Bump version and push tag
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '#skip') == false
