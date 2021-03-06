@@ -40,6 +40,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
           DEFAULT_BUMP: "patch"
-          RELEASE_BRANCHES: "main"
+          RELEASE_BRANCHES: "main" #this seemed to fix the beta tag problem
       #slack message for failure
       #slack message for success
