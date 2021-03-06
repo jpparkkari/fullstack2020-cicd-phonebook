@@ -36,6 +36,10 @@ app.get('/info', (req, res) => {
     })
 })
 
+app.get('/health', (req, res) => {
+  res.send('ok')
+})
+
 //change this to use mongodb
 app.get('/api/persons/:id', (req, res, next) => {
   Person.findById(req.params.id)

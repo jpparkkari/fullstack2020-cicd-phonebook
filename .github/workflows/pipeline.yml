@@ -33,6 +33,17 @@ jobs:
           start: npm run start:test
           wait-on: http://localhost:3001
       #deploy
+      - name: deploy
+        if: github.event_name == 'push' && contains(github.event.head_commit.message, '#skip') == false
+        uses: akhileshns/heroku-deploy@v3.11.10 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "thawing-dawn-25992" #Must be unique in Heroku
+          heroku_email: "j-p.parkkari@iki.fi"
+          healthcheck: "https://thawing-dawn-25992.herokuapp.com/health"
+          #checkstring: "ok"
+          delay: 2
+          rollbackonhealthcheckfailed: true
       - name: Bump version and push tag
         if: github.event_name == 'push' && contains(github.event.head_commit.message, '#skip') == false
         uses: anothrNick/github-tag-action@1.33.0
